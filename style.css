@@ -1,6 +1,6 @@
 /* Gemeinsamer Hintergrund für Start- und Detailseite */
 :root {
-  --background-image: url("assets/vorhang.jpg");
+  --background-image: url("assets/Vorhang.jpg");
   --tile-gap: 16px;
 }
 
