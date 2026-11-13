@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bildansicht</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="detail">
+  <main class="detail-wrap">
+    <a class="back-link" href="index.html">← Zurück zur Übersicht</a>
+    <img id="detail-image_links" class="detail-image" src="assets/platzhalter-detail.svg" alt="Ausgewähltes Bild">
+  </main>
+  <script>
+    // Die Bilddatei wird anhand des Parameters ?bild=... ausgewählt.
+    // Hier können später die tatsächlichen Dateinamen eingetragen werden.
+    const bilder = {
+      "bild-01": "assets/detail-01_text.jpg",
+      "bild-02": "assets/detail-02.jpg",
+      "bild-03": "assets/detail-03.jpg",
+      "bild-04": "assets/detail-04.jpg",
+      "bild-05": "assets/detail-05.jpg",
+      "bild-06": "assets/detail-06.jpg",
+      "bild-07": "assets/detail-07.jpg",
+      "bild-08": "assets/detail-08.jpg",
+      "bild-09": "assets/detail-09.jpg",
+      "bild-10": "assets/detail-10.jpg",
+      "bild-11": "assets/detail-11.jpg",
+      "bild-12": "assets/detail-12.jpg"
+    };
+	    const bilder2 = {
+      "bild-01": "assets/detail-01_rechts.jpg",
+      "bild-02": "assets/detail-02.jpg",
+      "bild-03": "assets/detail-03.jpg",
+      "bild-04": "assets/detail-04.jpg",
+      "bild-05": "assets/detail-05.jpg",
+      "bild-06": "assets/detail-06.jpg",
+      "bild-07": "assets/detail-07.jpg",
+      "bild-08": "assets/detail-08.jpg",
+      "bild-09": "assets/detail-09.jpg",
+      "bild-10": "assets/detail-10.jpg",
+      "bild-11": "assets/detail-11.jpg",
+      "bild-12": "assets/detail-12.jpg"
+    };
+    const id = new URLSearchParams(window.location.search).get("bild");
+    const image = document.getElementById("detail-image_links");
+    if (id && bilder[id]) {
+      image.src = bilder[id];
+      image.alt = "Detailansicht " + id.replace("-", " ");
+      image.onerror = () => {
+        image.onerror = null;
+        image.src = "assets/platzhalter-detail.svg";
+      };
+    }
+	const image2 = document.getElementById("detail-image_rechts");
+    if (id && bilder2[id]) {
+      image2.src = bilder2[id];
+      image2.alt = "Detailansicht " + id.replace("-", " ");
+      image2.onerror = () => {
+        image2.onerror = null;
+        image2.src = "assets/platzhalter-detail.svg";
+      };
+    }
+  </script>
+</body>
+</html>
